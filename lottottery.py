@@ -39,7 +39,7 @@ def insert_new_item(conn, values):
         conn.execute(insert_str, values)
         conn.commit()
     else:
-        __logger.error("conn is not open")
+        print("conn is not open")
 
 "获取网络数据"
 "sNo: 最近期数"
