@@ -30,7 +30,7 @@ arrDate = []
 startSeral = 0
 
 def insert_new_item(conn, values):
-    insert_str = ('insert into redblue('
+    insert_str = ('insert or replace into redblue('
                                       'code, blue, red, date'
                                       ') values'
                                       '(?,?,?,?'
@@ -897,7 +897,7 @@ if __name__ == '__main__':
     db_conn = sqlite3.connect('redblue.db')
     getData(100, db_conn) #近100期
     db_conn.close()
-    exit()
+
     if exist:
         print('load exsit file.')
         wb = load_workbook('../data.xlsx')
